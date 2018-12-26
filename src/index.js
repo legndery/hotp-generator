@@ -12,7 +12,7 @@ if(argv.length === 1){
     }else
         fs.writeFileSync(path.resolve(__dirname , '../data/key'), nKey.trim());
 }
-const nKey = fs.readFileSync(path.resolve(__dirname , '../data/key')).toString();
+const nKey = fs.readFileSync(path.resolve(__dirname , '../data/key')).toString().trim();
 if(!nKey){
     console.log(`Usage: hotp-gen [key]\n\nOutputs RFC4662 OTP\nIf <Key> is present the secret Key will be set.`)
     process.exit(0);
